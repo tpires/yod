@@ -22,6 +22,16 @@
 	$ mkdir myproject && cd myproject
 	$ yod
 
+### Extras ###
+After your first yod setup you can use the following commands on your machine:
+
+	$ npm
+	$ node
+	$ nodejs
+	$ bower
+	$ grunt
+	$ gulp
+
 ## Notes ##
 ### Mac OS X ###
 * docker 1.3.x can share volumes with boot2docker VM, but only on /Users/*
