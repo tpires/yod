@@ -1,11 +1,14 @@
 # Yeoman in docker #
 
+Yod is a [docker](https://docker.com) image built to help front-end developers, resolving yeoman's dependencies and including bower, grunt and gulp.
+When executing yod for the first time it'll build a new image (yod:dev) that will be used to execute npm, node, bower, grunt and gulp.
+
 ## Pre-requisites ##
 ### Mac OS X ###
 * boot2docker 1.3.1 (>=)
 
 ### Linux ###
-* docker 1.2.0 (>=)
+* docker 1.3.0 (>=)
 
 ## How to build ##
 ### From repository ###
