@@ -1,0 +1,4 @@
+yod
+===
+
+Yeoman in docker
