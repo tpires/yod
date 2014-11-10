@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ `docker images yod | grep -i "dev" | wc -l` -eq 0 ]; then
+	IMAGE="node:latest"
+fi
+
+docker run -it --rm -v ${PWD}:/yod-dev --net=host yod:dev node "$@"
