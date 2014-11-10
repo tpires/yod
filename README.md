@@ -3,8 +3,10 @@
 ## Pre-requisites ##
 ### Mac OS X ###
 * boot2docker 1.3.1 (>=)
+
 ### Linux ###
 * docker 1.2.0 (>=)
+
 ## How to build ##
 ### From repository ###
 	$ git clone https://github.com/tpires/yod.git
