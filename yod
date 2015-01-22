@@ -36,7 +36,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	    source $HOME/.profile
 		echo -e "Added to your $HOME/.profile:\n\n\texport PATH=\$PATH:$HOME/bin"
 	fi
-	
+
 	SCRIPTS_DIR=$HOME/bin
 	YOD_UID=1000
 	YOD_GID=50
@@ -46,4 +46,11 @@ elif [[ "$OSTYPE" == "win32" ]]; then
     exit 1
 fi
 
-docker run -it --rm -v /var/run/docker.sock:/docker.sock -v $SCRIPTS_DIR:/scripts -v $PWD:$YOD_HOME/$PROJECT_NAME -v $HOME/.config:/$YOD_HOME/.config -e UID=$YOD_UID -e GID=$YOD_GID -e PROJECT_NAME=$PROJECT_NAME yod /bin/bash $YOD_HOME/setup.sh $1
+YOD_IMAGE=`docker images | grep yod | awk '{print $1}'`
+
+if [ -z $YOD_IMAGE ]; then
+        echo "You don't have any yod image. Running default image..."
+        YOD_IMAGE=tpires/yod:latest
+fi
+
+docker run -it --rm -v /var/run/docker.sock:/docker.sock -v $SCRIPTS_DIR:/scripts -v $PWD:$YOD_HOME/$PROJECT_NAME -v $HOME/.config:/$YOD_HOME/.config -e UID=$YOD_UID -e GID=$YOD_GID -e PROJECT_NAME=$PROJECT_NAME $YOD_IMAGE /bin/bash $YOD_HOME/setup.sh $1
