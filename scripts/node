@@ -1,7 +1,8 @@
 #!/bin/sh
 
 if [ `docker images yod | grep -i "dev" | wc -l` -eq 0 ]; then
-	IMAGE="node:latest"
+	echo "Error: yod development docker image not found! You've to run yod first."
+	exit 1
 fi
 
 docker run -it --rm -v ${PWD}:/yod-dev --net=host yod:dev node "$@"

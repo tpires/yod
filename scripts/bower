@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ `docker images yod | grep -i "dev" | wc -l` -eq 0 ]; then
-	echo "Error: yod developement docker image not found! You've to run yod first."
+	echo "Error: yod development docker image not found! You've to run yod first."
 	exit 1
 fi
 
