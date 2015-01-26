@@ -46,7 +46,7 @@ elif [[ "$OSTYPE" == "win32" ]]; then
     exit 1
 fi
 
-YOD_IMAGE=`docker images | grep yod | awk '{print $1}'`
+YOD_IMAGE=`docker images | grep -v dev | grep yod | awk '{print $1}'`
 
 if [ -z $YOD_IMAGE ]; then
         echo "You don't have any yod image. Running default image..."
