@@ -15,10 +15,12 @@ When executing yod for the first time it'll build a new image (yod:dev) that wil
 	$ git clone https://github.com/tpires/yod.git
 	$ cd yod
 	$ docker build -t yod .
+	$ chmod +x yod	
 	$ sudo cp yod /usr/local/bin/
 ### From Docker Hub ###
 	$ docker pull tpires/yod:latest
 	$ curl https://raw.githubusercontent.com/tpires/yod/master/yod -o /usr/local/bin/yod
+	$ chmod +x /usr/local/bin/yod
 
 ## How to use
 	$ # create your project directory and launch yod script
